@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookZ | Profiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-primary {
+            background-color: #f55a3b;
+        }
+
+        /* Bright Red */
+        .bg-secondary {
+            background-color: #ffd700;
+        }
+
+        /* Gold */
+        .bg-accent {
+            background-color: #2b9e2a;
+        }
+
+        /* Bright Green */
+        .text-accent {
+            color: #fff;
+        }
+
+        /* White Text */
+    </style>
+</head>
+
+<body class="bg-secondary text-gray-800">
+    <header class="bg-primary text-accent p-6 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-4xl font-bold italic">CookZ 🍽️</a>
+            <ul class="flex space-x-8">
+                <li><a href="index.html" class="hover:text-gray-300 transition">Home</a></li>
+                <li><a href="recepten.html" class="hover:text-gray-300 transition">Recepten</a></li>
+                <li><a href="favorieten.html" class="hover:text-gray-300 transition">Favorieten</a></li>
+                <li><a href="profiel.html" class="hover:text-gray-300 transition">Profiel</a></li>
+                <li><a href="admin.html" class="hover:text-gray-300 transition">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-10">
+        <h1 class="text-5xl font-bold text-center text-accent">Jouw Profiel</h1>
+        <section class="mt-8 text-center">
+            <h2 class="text-3xl font-semibold">Gebruikersinformatie</h2>
+            <p class="mt-4">Hier kun je je gegevens beheren.</p>
+            <button class="bg-accent text-accent py-2 px-6 rounded mt-4 hover:bg-green-500 transition">Bewerk Profiel</button>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-accent text-center p-4 mt-10">
+        &copy; 2024 CookZ. Alle rechten voorbehouden.
+    </footer>
+</body>
+
+</html>

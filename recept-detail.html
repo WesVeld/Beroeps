@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookZ | Recept Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-primary { background-color: #b56d68; }
+        .bg-secondary { background-color: #f5e296; }
+    </style>
+</head>
+<body class="bg-secondary text-gray-800">
+    <header class="bg-primary text-white p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold">CookZ</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="recepten.html" class="hover:underline">Recepten</a></li>
+                <li><a href="favorieten.html" class="hover:underline">Favorieten</a></li>
+                <li><a href="profiel.html" class="hover:underline">Profiel</a></li>
+                <li><a href="admin.html" class="hover:underline">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-10">
+        <section>
+            <h1 class="text-4xl font-bold text-primary" id="recipe-name">Recept Naam</h1>
+            <p class="mt-4" id="recipe-description">Korte beschrijving van het recept.</p>
+        </section>
+
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold text-primary">Ingrediënten</h2>
+            <ul id="recipe-ingredients" class="list-disc list-inside mt-4"></ul>
+        </section>
+
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold text-primary">Bereidingswijze</h2>
+            <ol id="recipe-steps" class="list-decimal list-inside mt-4"></ol>
+        </section>
+
+        <section class="mt-8">
+            <a href="#" onclick="addToFavorites('Recept Naam')" class="bg-accent text-white py-2 px-4 rounded">Voeg toe aan favorieten</a>
+        </section>
+    </main>
+
+    <div id="popup" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-lg font-semibold" id="popup-title">Popup Titel</h2>
+            <p id="popup-message">Dit is een voorbeeld van een popup.</p>
+            <button onclick="closePopup()" class="bg-blue-500 text-white py-2 px-4 rounded mt-4">Sluiten</button>
+        </div>
+    </div>
+
+    <script>
+        // Load the recipe details based on URL hash
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            // Placeholder for recipe loading
+            if (hash) {
+                document.getElementById('recipe-name').textContent = "Recept Naam"; // Update later
+                document.getElementById('recipe-description').textContent = "Korte beschrijving van het recept."; // Update later
+                document.getElementById('recipe-ingredients').innerHTML = ""; // Populate later
+                document.getElementById('recipe-steps').innerHTML = ""; // Populate later
+            }
+        });
+
+        function addToFavorites(recipeName) {
+            const favorites = JSON.parse(localStorage.getItem('favorieten')) || [];
+            if (!favorites.includes(recipeName)) {
+                favorites.push(recipeName);
+                localStorage.setItem('favorieten', JSON.stringify(favorites));
+                showPopup(`${recipeName} is toegevoegd aan je favorieten!`);
+            } else {
+                showPopup(`${recipeName} staat al in je favorieten!`);
+            }
+        }
+
+        function showPopup(message) {
+            document.getElementById('popup-message').textContent = message;
+            document.getElementById('popup').classList.remove('hidden');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
