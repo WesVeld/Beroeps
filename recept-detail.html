@@ -6,14 +6,16 @@
     <title>CookZ | Recept Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .bg-primary { background-color: #b56d68; }
-        .bg-secondary { background-color: #f5e296; }
+        .bg-primary { background-color: #c2ad62; } /* Goud */
+        .bg-secondary { background-color: #ffffff; } /* Wit */
+        .bg-accent { background-color: #2b9e2a; } /* Heldere Groen */
+        .text-accent { color: #ffffff; } /* Witte Tekst */
     </style>
 </head>
 <body class="bg-secondary text-gray-800">
-    <header class="bg-primary text-white p-6">
+    <header class="bg-primary text-accent p-6">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold">CookZ</a>
+            <a href="index.html" class="text-3xl font-bold">CookZ 🍽️</a>
             <ul class="flex space-x-6">
                 <li><a href="index.html" class="hover:underline">Home</a></li>
                 <li><a href="recepten.html" class="hover:underline">Recepten</a></li>
@@ -41,7 +43,7 @@
         </section>
 
         <section class="mt-8">
-            <a href="#" onclick="addToFavorites('Recept Naam')" class="bg-accent text-white py-2 px-4 rounded">Voeg toe aan favorieten</a>
+            <a href="#" onclick="addToFavorites('Recept Naam')" class="bg-accent text-accent py-2 px-4 rounded">Voeg toe aan favorieten</a>
         </section>
     </main>
 
@@ -59,10 +61,32 @@
             const hash = window.location.hash.substring(1);
             // Placeholder for recipe loading
             if (hash) {
-                document.getElementById('recipe-name').textContent = "Recept Naam"; // Update later
-                document.getElementById('recipe-description').textContent = "Korte beschrijving van het recept."; // Update later
-                document.getElementById('recipe-ingredients').innerHTML = ""; // Populate later
-                document.getElementById('recipe-steps').innerHTML = ""; // Populate later
+                // Simulated recipe data; replace with actual data as needed
+                const recipeData = {
+                    name: "Spaghetti Bolognese",
+                    description: "Een klassiek Italiaans recept met een rijke tomatensaus.",
+                    ingredients: [
+                        "200g spaghetti",
+                        "100g gehakt",
+                        "1 blik tomaten",
+                        "1 ui, gesnipperd",
+                        "2 teentjes knoflook, geperst",
+                        "Zout en peper naar smaak",
+                    ],
+                    steps: [
+                        "Kook de spaghetti volgens de instructies op de verpakking.",
+                        "Verhit olie in een pan en fruit de ui en knoflook.",
+                        "Voeg het gehakt toe en bak tot het bruin is.",
+                        "Voeg de tomaten toe en laat sudderen.",
+                        "Serveer de saus over de spaghetti."
+                    ]
+                };
+
+                // Update the UI with the recipe data
+                document.getElementById('recipe-name').textContent = recipeData.name;
+                document.getElementById('recipe-description').textContent = recipeData.description;
+                document.getElementById('recipe-ingredients').innerHTML = recipeData.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
+                document.getElementById('recipe-steps').innerHTML = recipeData.steps.map(step => `<li>${step}</li>`).join('');
             }
         });
 

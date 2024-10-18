@@ -6,10 +6,10 @@
     <title>CookZ | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .bg-primary { background-color: #f55a3b; } /* Bright Red */
-        .bg-secondary { background-color: #ffd700; } /* Gold */
+        .bg-primary { background-color: #c2ad62; } /* Bright Red */
+        .bg-secondary { background-color: #ffffff; } /* Gold */
         .bg-accent { background-color: #2b9e2a; } /* Bright Green */
-        .text-accent { color: #fff; } /* White Text */
+        .text-accent { color: #ffffff; } /* White Text */
         .bg-banner {
             background-image: url(/image/woman-making-salad-kitchen.jpg);
             background-size: cover;
@@ -44,7 +44,7 @@
         <!-- Search Section -->
         <section class="container mx-auto mt-10 text-center">
             <h2 class="text-3xl font-semibold">Zoek naar een recept</h2>
-            <input type="text" id="search-input" placeholder="Typ hier om te zoeken..." class="mt-4 border border-gray-300 rounded-md p-2 w-1/2 mx-auto shadow-md">
+            <input type="text" id="search-input" placeholder="Typ hier om te zoeken..." class="mt-4 border border-gray-300 rounded-md p-2 w-1/2 mx-auto shadow-md focus:outline-none focus:ring-2 focus:ring-accent">
             <button onclick="searchRecipe()" class="bg-accent text-accent py-2 px-6 rounded mt-4 hover:bg-green-500 transition">Zoek</button>
         </section>
 
@@ -57,7 +57,7 @@
         <section class="container mx-auto mt-10">
             <h2 class="text-4xl font-bold text-center mb-8">Populaire Recepten</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://source.unsplash.com/1600x900/?spaghetti" alt="Spaghetti Bolognese" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">Spaghetti Bolognese</h3>
@@ -65,7 +65,7 @@
                         <a href="recept-detail.html#spaghetti" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://source.unsplash.com/1600x900/?curry" alt="Kip Curry" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">Kip Curry</h3>
@@ -73,7 +73,7 @@
                         <a href="recept-detail.html#chicken-curry" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://source.unsplash.com/1600x900/?salad" alt="Groentesalade" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">Groentesalade</h3>
@@ -81,7 +81,7 @@
                         <a href="recept-detail.html#salad" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://source.unsplash.com/1600x900/?pasta" alt="Pasta Primavera" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">Pasta Primavera</h3>
@@ -89,7 +89,7 @@
                         <a href="recept-detail.html#pasta-primavera" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://source.unsplash.com/1600x900/?chili" alt="Chili Con Carne" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">Chili Con Carne</h3>
@@ -108,11 +108,11 @@
     <script>
         // Placeholder for recipes
         const recipes = [
-            { name: "Spaghetti Bolognese", link: "recept-detail.html#spaghetti" },
-            { name: "Kip Curry", link: "recept-detail.html#chicken-curry" },
-            { name: "Groentesalade", link: "recept-detail.html#salad" },
-            { name: "Pasta Primavera", link: "recept-detail.html#pasta-primavera" },
-            { name: "Chili Con Carne", link: "recept-detail.html#chili" }
+            { id: 1, name: "Spaghetti Bolognese", link: "recept-detail.html#spaghetti" },
+            { id: 2, name: "Kip Curry", link: "recept-detail.html#chicken-curry" },
+            { id: 3, name: "Groentesalade", link: "recept-detail.html#salad" },
+            { id: 4, name: "Pasta Primavera", link: "recept-detail.html#pasta-primavera" },
+            { id: 5, name: "Chili Con Carne", link: "recept-detail.html#chili" }
         ];
 
         function searchRecipe() {

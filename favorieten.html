@@ -8,25 +8,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-primary {
-            background-color: #f55a3b;
+            background-color: #c2ad62; /* Bright Red */
         }
 
-        /* Bright Red */
         .bg-secondary {
-            background-color: #ffd700;
+            background-color: #ffffff; /* Gold */
         }
 
-        /* Gold */
         .bg-accent {
-            background-color: #2b9e2a;
+            background-color: #2b9e2a; /* Bright Green */
         }
 
-        /* Bright Green */
         .text-accent {
-            color: #fff;
+            color: #ffffff; /* White Text */
         }
-
-        /* White Text */
     </style>
 </head>
 
@@ -49,11 +44,53 @@
         <p class="mt-4 text-lg text-center">Hier kun je jouw favoriete recepten vinden.</p>
         <section class="mt-10">
             <h2 class="text-4xl font-bold text-center">Jouw Favorieten</h2>
-            <ul class="list-disc list-inside mt-4">
-                <!-- Voeg hier favoriete recepten toe -->
-                <li class="text-center"><a href="recept-detail.html#spaghetti" class="text-primary hover:underline">Spaghetti Bolognese</a></li>
-                <li class="text-center"><a href="recept-detail.html#chicken-curry" class="text-primary hover:underline">Kip Curry</a></li>
-            </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+                <!-- Favoriete recepten als kaarten -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/1600x900/?spaghetti" alt="Spaghetti Bolognese" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Spaghetti Bolognese</h3>
+                        <p class="mt-2 text-gray-600">Een klassieke Italiaanse schotel vol smaak.</p>
+                        <a href="recept-detail.html#spaghetti" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/1600x900/?curry" alt="Kip Curry" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Kip Curry</h3>
+                        <p class="mt-2 text-gray-600">Heerlijke en romige kipcurry met specerijen.</p>
+                        <a href="recept-detail.html#chicken-curry" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/1600x900/?salad" alt="Groentesalade" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Groentesalade</h3>
+                        <p class="mt-2 text-gray-600">Verfrissende salade met seizoensgroenten.</p>
+                        <a href="recept-detail.html#salad" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/1600x900/?pasta" alt="Pasta Primavera" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Pasta Primavera</h3>
+                        <p class="mt-2 text-gray-600">Een kleurrijke pasta vol met groenten.</p>
+                        <a href="recept-detail.html#pasta-primavera" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/1600x900/?chili" alt="Chili Con Carne" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold">Chili Con Carne</h3>
+                        <p class="mt-2 text-gray-600">Een pittige en hartige chili, perfect voor koude dagen.</p>
+                        <a href="recept-detail.html#chili" class="mt-4 inline-block bg-accent text-accent py-2 px-4 rounded hover:bg-green-500 transition">Bekijk Recept</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
